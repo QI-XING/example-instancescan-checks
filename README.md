@@ -220,6 +220,8 @@ Running business rules during transform may cause the transform to take longer t
 ### Avoid using getReference()
 getReference is no longer considered best practice due to its performance impact and it is recommended to use g_scratchpad or GlideAjax instead.
 
+### Task done on Due Date reflects late
+When using glidedatetime, there is a possibility that the due date is set incorrectly. For example, due date set to last day of month unexpectedly showing -1 day from last day of month, consider using gdt.getDisplayValue() to get local datetime reference and set time to 23:59:59 so that task done on the due date will still show as done 'On Time'.
 
 ## Category: Security
 ##Check Mandatory fields on incident
